@@ -5,6 +5,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Switch } from "antd";
 import { Link } from "react-router-dom";
 import "antd/dist/reset.css";
+import SideBar from "./SideBar";
 const LoginPage = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [checked, setChecked] = useState(false);
@@ -17,8 +18,10 @@ const LoginPage = () => {
     <>
       <div className="login-page-container">
         <div className="left-side">
-          
-          
+          <div className="pseudo-ele" style={{}}>
+            <h1 className="descrip">The BEST place to subscribe / buy</h1>
+            <SideBar />
+          </div>
         </div>
         <div className="right-side">
           <TopNavbar />
