@@ -340,6 +340,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .wallet-container {
   display: flex;
@@ -459,7 +460,18 @@ button {
 .totalReferral {
   margin-right: 32px;
 }
-.uploadImg {
+.upload-container {
+  color: var(--secondary-color);
+}
+
+.uploadimg {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin-left: 8px;
 }
 * {
   /* outline: 1px solid var(--secondary-color); */

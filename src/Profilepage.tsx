@@ -2,6 +2,8 @@ import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
 import { ChangeEvent, useCallback } from "react";
 import { useImageContext } from "./ContextAPI/Context";
+import Avatar from "./assets/images/imgplaceholder.svg";
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 
 const Profilepage = () => {
   const { addImage, images } = useImageContext();
@@ -33,6 +35,10 @@ const Profilepage = () => {
     },
     [addImage]
   );
+  const uploadInput = document.querySelector<HTMLInputElement>(".uploadImg");
+  if (uploadInput) {
+    uploadInput.click();
+  }
   return (
     <div className="profile-page-container">
       <div className="profile-leftside">
@@ -44,8 +50,9 @@ const Profilepage = () => {
           <div className="edit-leftside">
             <div className="activity profile-image">
               <div>
+                <img src={Avatar} alt="" />
                 {images.map((image) => (
-                  <img src={image.url} alt="" />
+                  <img src={image.url == "" ? Avatar : image.url} alt="" />
                 ))}
               </div>
               <input
@@ -55,6 +62,18 @@ const Profilepage = () => {
                 onChange={handleUpload} // Accessibility improvement
                 placeholder="upload your img"
               />
+              <div
+                className="upload-container"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onClick={() => uploadInput}
+              >
+                <CameraAltOutlinedIcon />
+                <div className="uploadimg">Upload Image</div>
+              </div>
             </div>
             <div className="profile-details"></div>
           </div>
