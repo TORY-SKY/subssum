@@ -253,7 +253,8 @@ button {
 /* dashboard styling */
 
 .dashboard-container,
-.profile-page-container {
+.profile-page-container,
+.Airtime-to-cash-container {
   display: grid;
   grid-template-columns: 22% 78%;
 }
@@ -284,6 +285,8 @@ button {
   justify-content: center;
   margin-top: 4px;
   color: var(--secondary-color);
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 .merchant-upgrade .merchant-icons {
   display: flex;
@@ -330,9 +333,12 @@ button {
   border: 2px solid var(--darkGrey-color);
   padding: 24px;
 }
+.profile-leftside {
+  background-color: #eff3fb;
+}
 .profile-image {
   width: 416px;
-  height: 184px;
+  height: fit-content;
   margin-bottom: 20px;
   border-radius: 24px;
   border: 2px solid var(--darkGrey-color);
@@ -463,17 +469,95 @@ button {
 .upload-container {
   color: var(--secondary-color);
 }
-
+.uploadImg {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  border: 1px solid red;
+}
 .uploadimg {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
   letter-spacing: 0.02em;
-  text-align: left;
+
   margin-left: 8px;
 }
+.profile-details {
+  width: 416px;
+  height: 271px;
+  margin-bottom: 20px;
+  border-radius: 24px;
+  border: 2px solid var(--darkGrey-color);
+  padding: 24px;
+}
+.detail-disc {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #4c689e;
+}
+.detail {
+  margin-bottom: 16px;
+}
+.detail-values {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.36px;
+  text-align: left;
+  color: #4c689e;
+}
+.profile-details .detail {
+  display: flex;
+  justify-content: space-between;
+}
+/* account active */
+.acc-active {
+  color: #2dae32 !important;
+}
+.edit-leftside {
+  display: flex;
+}
+
+.edit-leftside .copy {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.edit-this {
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.profile-rightside {
+}
+
+.changer-password-container {
+  width: 100%;
+  padding-left: 32px;
+  overflow: hidden;
+}
+.airtime-leftside {
+  background-color: var(--darkGrey-color);
+}
+.airtime-right-side {
+  margin-left: 32px;
+  margin-top: 32px;
+}
+
 * {
   /* outline: 1px solid var(--secondary-color); */
   /* padding: 2px; */
+}
+p {
+  margin: 0;
+  padding: 0;
 }
