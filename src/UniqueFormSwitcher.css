@@ -1,0 +1,51 @@
+.unique-form-switcher {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.unique-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unique-form-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+  color: #d7e1f4;
+}
+.unique-active {
+  color: #4169e1 !important;
+}
+
+.unique-form-button.unique-active,
+.unique-form-button:hover {
+  color: #6882b6;
+}
+
+.unique-form-container {
+  padding: 20px;
+  position: relative;
+}
+
+.unique-form {
+  transition: transform 0.5s ease-in-out;
+}
+
+.unique-slide-in {
+  animation: uniqueSlideIn 0.5s forwards;
+}
+
+@keyframes uniqueSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

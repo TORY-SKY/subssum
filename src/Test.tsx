@@ -1,81 +1,80 @@
-// MultiStageForm.tsx
 import React, { useState } from "react";
-import "./MultiStageForm.css"; // Import CSS for styles
-import { AirtimeInfoForm, PaymentForm, ReceiptForm } from "./FormStages"; // Import form components
+import "./UniqueFormSwitcher.css"; // Updated CSS file name
 
-type Stage = "info" | "payment" | "receipt";
+const UniqueFormSwitcher: React.FC = () => {
+  const [currentForm, setCurrentForm] = useState(0); // Track the current form index
 
-const MultiStageForm: React.FC = () => {
-  const [currentStage, setCurrentStage] = useState<Stage>("info");
-  const [formData, setFormData] = useState({
-    provider: "",
-    phone: "",
-    amount: "",
-    pin: "",
-  });
-
-  const [isValid, setIsValid] = useState(false);
-
-  // Function to move to the next stage
-  const nextStage = () => {
-    if (currentStage === "info") setCurrentStage("payment");
-    else if (currentStage === "payment") setCurrentStage("receipt");
-  };
-
-  // Function to validate form data for each stage
-  const validateStage = (stage: Stage) => {
-    switch (stage) {
-      case "info":
-        // Simple validation for demo purposes
-        const { provider, phone, amount, pin } = formData;
-        if (provider && phone && amount && pin) setIsValid(true);
-        else setIsValid(false);
-        break;
-      // Additional validation can be added for other stages if necessary
-      default:
-        setIsValid(true);
-    }
-  };
-
-  // Update form data and validate
-  const updateFormData = (data: Partial<typeof formData>) => {
-    setFormData({ ...formData, ...data });
-    validateStage(currentStage);
+  // Function to handle form switching
+  const switchForm = (formIndex: number) => {
+    setCurrentForm(formIndex);
   };
 
   return (
-    <div className="multi-stage-form">
-      {/* Progress Indicators */}
-      <div className="progress-indicators">
-        <div className={`stage ${currentStage === "info" ? "active" : ""}`}>
-          Fill Info
-        </div>
-        <div className={`stage ${currentStage === "payment" ? "active" : ""}`}>
-          Make Payment
-        </div>
-        <div className={`stage ${currentStage === "receipt" ? "active" : ""}`}>
-          View Receipt
-        </div>
-      </div>
-      <div className="progress-bar">
+    <div className="unique-form-switcher">
+      <div className="unique-form-buttons">
         <div
-          className={`progress ${
-            currentStage === "info"
-              ? "stage1"
-              : currentStage === "payment"
-              ? "stage2"
-              : "stage3"
+          className={`unique-form-button ${
+            currentForm === 0 ? "unique-active" : ""
           }`}
-        ></div>
+          onClick={() => switchForm(0)}
+        >
+          <p>Fill Info</p>
+          <div className="bar"></div>
+        </div>
+        <button
+          className={`unique-form-button ${
+            currentForm === 1 ? "unique-active" : ""
+          }`}
+          onClick={() => switchForm(1)}
+        >
+          Change PIN
+        </button>
+        <button
+          className={`unique-form-button ${
+            currentForm === 2 ? "unique-active" : ""
+          }`}
+          onClick={() => switchForm(2)}
+        >
+          Change Email
+        </button>
       </div>
-      {/* Conditional Rendering of Form Stages */}
-      {currentStage === "info" && (
-        <AirtimeInfoForm onProceed={nextStage} updateData={updateFormData} />
-      )}
-      {currentStage === "payment" && <PaymentForm onProceed={nextStage} />}
-      {currentStage === "receipt" && <ReceiptForm />}
+      <div className="unique-form-container">
+        {currentForm === 0 && <ChangePasswordForm />}
+        {currentForm === 1 && <ChangePinForm />}
+        {currentForm === 2 && <ChangeEmailForm />}
+      </div>
     </div>
   );
 };
 
-export default MultiStageForm;
+// Change Password Form Component
+const ChangePasswordForm: React.FC = () => (
+  <div className="unique-form unique-slide-in">
+    <h3>Change Password</h3>
+    <input type="password" placeholder="New Password" />
+    <input type="password" placeholder="Confirm Password" />
+    <button type="submit">Submit</button>
+  </div>
+);
+
+// Change PIN Form Component
+const ChangePinForm: React.FC = () => (
+  <div className="unique-form unique-slide-in">
+    <h3>Change PIN</h3>
+    <input type="password" placeholder="New PIN" />
+    <input type="password" placeholder="Confirm PIN" />
+    <button type="submit">Submit</button>
+  </div>
+);
+
+// Change Email Form Component (Additional Form)
+const ChangeEmailForm: React.FC = () => (
+  <div className="unique-form unique-slide-in">
+    <h3>Change Email</h3>
+    <input type="email" placeholder="New Email" />
+    <input type="email" placeholder="Confirm Email" />
+    <button type="submit">Submit</button>
+  </div>
+);
+
+export default UniqueFormSwitcher;

@@ -5,6 +5,7 @@ import { useImageContext } from "./ContextAPI/Context";
 import Avatar from "./assets/images/imgplaceholder.svg";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
+import "./FormSwitcher.css";
 
 const Profilepage = () => {
   const { addImage, images } = useImageContext();
@@ -126,7 +127,7 @@ const Profilepage = () => {
               </div>
             </div>
             <div className="changer-password-container">
-              <div className="swith-forms">
+              <div className="switch-forms">
                 <div className="button-container">
                   <button
                     className={`form-button ${
@@ -306,7 +307,6 @@ const Profilepage = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="forms"></div> */}
             </div>
           </div>
         </div>

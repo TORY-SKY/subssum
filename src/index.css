@@ -285,8 +285,6 @@ button {
   justify-content: center;
   margin-top: 4px;
   color: var(--secondary-color);
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
 }
 .merchant-upgrade .merchant-icons {
   display: flex;
@@ -539,20 +537,45 @@ button {
 
 .profile-rightside {
 }
-
 .changer-password-container {
-  width: 100%;
+  width: 432px;
   padding-left: 32px;
-  overflow: hidden;
 }
+
+/* Airtime to cash page */
 .airtime-leftside {
   background-color: var(--darkGrey-color);
 }
 .airtime-right-side {
-  margin-left: 32px;
-  margin-top: 32px;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: var(--white-color);
 }
-
+.unique-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.unique-form-button .bar {
+  width: 161.33px;
+  height: 7px;
+  border-radius: 100px;
+  background-color: #d7e1f4;
+  transition: background 0.3s linear;
+}
+.unique-form-button .bar.activated {
+  background-color: #4169e1;
+}
+.airtime-containre {
+  margin: 0 auto;
+  width: 505px;
+}
+.unique-form-switcher {
+  width: 100%;
+}
 * {
   /* outline: 1px solid var(--secondary-color); */
   /* padding: 2px; */

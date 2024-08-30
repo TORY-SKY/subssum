@@ -3,19 +3,19 @@ import React, { useState } from "react";
 
 interface AirtimeInfoFormProps {
   onProceed: () => void;
-  updateData: (data: {
-    provider: string;
-    phone: string;
-    amount: string;
-    pin: string;
-  }) => void;
+  updateData: (data: Partial<FormDataType>) => void;
 }
-
+type FormDataType = {
+  provider: string;
+  phone: string;
+  amount: string;
+  pin: string;
+};
 export const AirtimeInfoForm: React.FC<AirtimeInfoFormProps> = ({
   onProceed,
   updateData,
 }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataType>({
     provider: "",
     phone: "",
     amount: "",
@@ -27,7 +27,7 @@ export const AirtimeInfoForm: React.FC<AirtimeInfoFormProps> = ({
   ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    updateData({ [name]: value });
+    updateData({ [name]: value } as Partial<FormDataType>);
   };
 
   return (

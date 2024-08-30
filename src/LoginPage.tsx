@@ -71,7 +71,7 @@ const LoginPage = () => {
               <p>Or continue with</p>
             </div>
             <div className="login-form-container">
-              <form action="POST" className="login-form-field">
+              <form action="/dashboard" className="login-form-field">
                 <div className="inputs-div">
                   <label
                     htmlFor=""
@@ -157,6 +157,7 @@ const LoginPage = () => {
                     backgroundColor: "#4169E1",
                     border: "none",
                   }}
+                  onClick={() => (window.location.pathname = "/dashboard")}
                 >
                   Log in
                 </button>
