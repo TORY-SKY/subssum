@@ -3,10 +3,11 @@ import TopNavbar from "./TopNavbar";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Switch } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import SideBar from "./SideBar";
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [visible, setVisible] = useState<boolean>(false);
   const [checked, setChecked] = useState(false);
   const onChange = (checked: boolean) => {
@@ -149,6 +150,7 @@ const LoginPage = () => {
                     Recover Password
                   </Link>
                 </div>
+
                 <button
                   className="loginbtn"
                   style={{
@@ -157,7 +159,7 @@ const LoginPage = () => {
                     backgroundColor: "#4169E1",
                     border: "none",
                   }}
-                  onClick={() => (window.location.pathname = "/dashboard")}
+                  onClick={() => navigate("/dashboard")}
                 >
                   Log In
                 </button>
