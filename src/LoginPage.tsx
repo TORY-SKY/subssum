@@ -159,7 +159,7 @@ const LoginPage = () => {
                   }}
                   onClick={() => (window.location.pathname = "/dashboard")}
                 >
-                  Log in
+                  Log In
                 </button>
               </form>
             </div>
