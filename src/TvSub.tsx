@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
 import LogoutBtn from "./LogoutBtn";
 
-const TVSUB = () => {
+const Tvsub = () => {
   return (
     <div>
       <div className="BuyAirtime-container">
@@ -18,4 +18,4 @@ const TVSUB = () => {
   );
 };
 
-export default TVSUB;
+export default Tvsub;
