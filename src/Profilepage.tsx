@@ -6,6 +6,7 @@ import Avatar from "./assets/images/imgplaceholder.svg";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import "./FormSwitcher.css";
+import LogoutBtn from "./LogoutBtn";
 
 const Profilepage = () => {
   const { addImage, images } = useImageContext();
@@ -54,6 +55,7 @@ const Profilepage = () => {
     <div className="profile-page-container">
       <div className="profile-leftside">
         <SideBar />
+        <LogoutBtn />
       </div>
       <div className="profile-rightside">
         <div className="edit-profile">

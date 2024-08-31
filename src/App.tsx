@@ -7,6 +7,10 @@ import Profilepage from "./Profilepage";
 import { ImageProvider } from "./ContextAPI/Context";
 // import FormSwitcher from "./Test";
 import AirtimeTocash from "./AirtimeTocash";
+import BuyAirtime from "./BuyAirtime";
+import BuyData from "./BuyData";
+import TVSUB from "./TVSUB";
+import ElectricityBill from "./ElectricityBill";
 
 const router = createBrowserRouter([
   {
@@ -39,10 +43,30 @@ const router = createBrowserRouter([
     element: <Profilepage />,
     errorElement: "Error Accessing this page",
   },
- 
+
   {
     path: "/airtimetocash",
     element: <AirtimeTocash />,
+    errorElement: "Error Accessing this page",
+  },
+  {
+    path: "/buyairtime",
+    element: <BuyAirtime />,
+    errorElement: "Error Accessing this page",
+  },
+  {
+    path: "/buydata",
+    element: <BuyData />,
+    errorElement: "Error Accessing this page",
+  },
+  {
+    path: "/tvsub",
+    element: <TVSUB />,
+    errorElement: "Error Accessing this page",
+  },
+  {
+    path: "/payelectricalbill",
+    element: <ElectricityBill />,
     errorElement: "Error Accessing this page",
   },
 ]);

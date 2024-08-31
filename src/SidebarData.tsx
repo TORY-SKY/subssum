@@ -7,7 +7,6 @@ import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import LoopOutlinedIcon from "@mui/icons-material/LoopOutlined";
 import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
-import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 interface SidebarMenuItem {
   title: string;
   icon: ReactElement;
@@ -54,10 +53,5 @@ export const SidebarData: SidebarMenuItem[] = [
     title: "Help & Support",
     icon: <SupportAgentOutlinedIcon />,
     link: "/helpcenter",
-  },
-  {
-    title: "Airtime to Cash",
-    icon: <LoginOutlinedIcon />,
-    link: "/airtimetocash",
   },
 ];

@@ -6,7 +6,16 @@ import { Switch } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import SideBar from "./SideBar";
-const LoginPage = () => {
+
+type FormData = {
+  email: string;
+  password: string;
+};
+type FormErrors = {
+  email: string;
+  password: string;
+};
+const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState<boolean>(false);
   const [checked, setChecked] = useState(false);
@@ -15,11 +24,70 @@ const LoginPage = () => {
     console.log(`Switch is now ${checked ? "On" : "Off"}`);
   };
 
+  // VALIDATION
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState<FormErrors>({
+    email: "",
+    password: "",
+  });
+
+  // Handle input change
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Validate form
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = { email: "", password: "" };
+    let isValid = true;
+
+    // Basic validation checks
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+      isValid = false;
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  // Handle form submission
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateForm()) {
+      navigate("/dashboard");
+      // Proceed with login
+      console.log("Form submitted successfully", formData);
+    }
+  };
+
   return (
     <>
       <div className="login-page-container">
-        <div className="left-side">
-          <div className="pseudo-ele" style={{}}>
+        <div className="left-side" style={{ backgroundColor: "#000080" }}>
+          <div
+            className="pseudo-ele"
+            style={{
+              marginLeft: "20px",
+              backgroundColor: "#EFF3FB",
+            }}
+          >
             <h1 className="descrip">The BEST place to subscribe / buy</h1>
             <SideBar />
           </div>
@@ -72,7 +140,11 @@ const LoginPage = () => {
               <p>Or continue with</p>
             </div>
             <div className="login-form-container">
-              <form action="/dashboard" className="login-form-field">
+              <form
+                action=""
+                className="login-form-field"
+                onSubmit={handleLogin}
+              >
                 <div className="inputs-div">
                   <label
                     htmlFor=""
@@ -81,6 +153,7 @@ const LoginPage = () => {
                     Email Address
                     <input
                       type="email"
+                      name="email"
                       placeholder="wabdotmail@gmail.com"
                       style={{
                         height: "50px",
@@ -92,6 +165,8 @@ const LoginPage = () => {
                         marginTop: "4px",
                         borderRadius: "4px",
                       }}
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                   </label>
                 </div>
@@ -118,10 +193,14 @@ const LoginPage = () => {
                   }}
                 >
                   <input
+                    name="password"
                     type={visible ? "text" : "password"}
                     placeholder="Gabon4351"
                     style={{ border: "none", outline: "none", width: "100%" }}
+                    value={formData.password}
+                    onChange={handleChange}
                   />
+
                   <div
                     className="show-hide"
                     onClick={() => {
@@ -135,6 +214,14 @@ const LoginPage = () => {
                     )}
                   </div>
                 </div>
+                <div className={`error-div-hide`}>
+                  {errors.email && (
+                    <span className="error-message">{errors.email}, </span>
+                  )}
+                  {errors.password && (
+                    <span className="error-message">{errors.password}</span>
+                  )}
+                </div>
                 <div className="remember-me-recoverpas">
                   <div className="remember">
                     <Switch
@@ -146,12 +233,14 @@ const LoginPage = () => {
                     />
                     <p>Remember me</p>
                   </div>
+
                   <Link to="/recoverpassword" className="recover-password">
                     Recover Password
                   </Link>
                 </div>
 
                 <button
+                  type="submit"
                   className="loginbtn"
                   style={{
                     width: "100%",
@@ -159,7 +248,6 @@ const LoginPage = () => {
                     backgroundColor: "#4169E1",
                     border: "none",
                   }}
-                  onClick={() => navigate("/dashboard")}
                 >
                   Log In
                 </button>

@@ -11,7 +11,12 @@ const SideBar = () => {
       className="side-bar-comp"
       style={{ height: "100vh", paddingLeft: "25px", paddingRight: "25px" }}
     >
-      <div className="sidebar-logo">
+      <div
+        className="sidebar-logo"
+        style={{
+          marginTop: "32px",
+        }}
+      >
         <img src={loogo} alt="logo" />
       </div>
       <ul className="link-tag-container">

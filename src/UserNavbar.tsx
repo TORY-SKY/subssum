@@ -11,6 +11,7 @@ const UserNavbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          marginBottom: "32px",
         }}
       >
         <div className="username-display">

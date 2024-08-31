@@ -2,7 +2,7 @@ import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
 import LogoutBtn from "./LogoutBtn";
 
-const Transactionhistory = () => {
+const BuyData = () => {
   return (
     <div>
       <div className="BuyAirtime-container">
@@ -18,4 +18,4 @@ const Transactionhistory = () => {
   );
 };
 
-export default Transactionhistory;
+export default BuyData;

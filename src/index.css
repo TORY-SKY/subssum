@@ -29,6 +29,9 @@ body {
   position: relative;
   margin-bottom: 50px;
 }
+.pseudo-ele {
+  border-top-left-radius: 24px;
+}
 .pseudo-ele::before {
   position: absolute;
   content: "";
@@ -194,6 +197,7 @@ ul {
   background-color: var(--white-color);
   border: 1px solid var(--grey-color);
   border-radius: 12px;
+  margin-top: 24px;
   /* margin-top: 24px; */
   width: 100%;
   padding: 40px;
@@ -232,6 +236,7 @@ label {
 button {
   cursor: pointer;
 }
+
 .login-form-field input {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -254,9 +259,13 @@ button {
 
 .dashboard-container,
 .profile-page-container,
-.Airtime-to-cash-container {
+.Airtime-to-cash-container,
+.BuyAirtime-container {
   display: grid;
   grid-template-columns: 22% 78%;
+}
+.buyAirtime-leftside {
+  background-color: #eff3fb;
 }
 .dashboard-container .leftSide {
   background-color: var(--darkGrey-color);
@@ -277,13 +286,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 .merchant-upgrade .welcome {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
+  /* margin-top: 4px; */
   color: var(--secondary-color);
 }
 .merchant-upgrade .merchant-icons {
@@ -647,4 +656,8 @@ button {
 p {
   margin: 0;
   padding: 0;
+}
+
+* {
+  /* outline: 1px solid red; */
 }

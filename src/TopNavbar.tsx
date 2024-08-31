@@ -3,7 +3,7 @@ const TopNavbar = () => {
   return (
     <div className="Navbar-container">
       <nav className="navigation-bar">
-        <Link to="/">
+        <Link to="/dashboard">
           <div className="homensvg">
             <svg
               width="8"

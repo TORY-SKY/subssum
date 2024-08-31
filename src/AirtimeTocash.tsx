@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
 import "./UniqueFormSwitcher.css";
-import CustomDropdown from "../src/NetworkProvidersData"; // Import the custom dropdown component
+import CustomDropdown from "../src/NetworkProvidersData";
+import LogoutBtn from "./LogoutBtn";
 
 const AirtimeTocash: React.FC = () => {
   const [currentForm, setCurrentForm] = useState(0); // Track the current form index
@@ -16,6 +17,7 @@ const AirtimeTocash: React.FC = () => {
     <div className="Airtime-to-cash-container">
       <div className="airtime-leftside">
         <SideBar />
+        <LogoutBtn />
       </div>
       <div className="airtime-right-side">
         <UserNavbar />
