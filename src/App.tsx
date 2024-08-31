@@ -26,7 +26,8 @@ const router = createBrowserRouter([
   {
     path: "/recoverPassword",
     element: "recover password page",
-    errorElement: "Error Accessing this page",
+    errorElement:
+      "Error Accessing this page sir please go back to previous page",
   },
   {
     path: "/sidebar",
