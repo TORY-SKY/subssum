@@ -5,7 +5,7 @@ import Transactionhistory from "./Transactionhistory";
 import Dashboard from "./Dashboard";
 import Profilepage from "./Profilepage";
 import { ImageProvider } from "./ContextAPI/Context";
-import FormSwitcher from "./Test";
+// import FormSwitcher from "./Test";
 import AirtimeTocash from "./AirtimeTocash";
 
 const router = createBrowserRouter([
@@ -39,11 +39,7 @@ const router = createBrowserRouter([
     element: <Profilepage />,
     errorElement: "Error Accessing this page",
   },
-  {
-    path: "/test",
-    element: <FormSwitcher />,
-    errorElement: "Error Accessing this page",
-  },
+ 
   {
     path: "/airtimetocash",
     element: <AirtimeTocash />,

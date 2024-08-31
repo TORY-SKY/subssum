@@ -576,10 +576,74 @@ button {
 .unique-form-switcher {
   width: 100%;
 }
-* {
-  /* outline: 1px solid var(--secondary-color); */
-  /* padding: 2px; */
+.unique-form-container {
+  padding: 0;
+  margin-top: 54px;
+  background-color: #f7f9fd;
+  padding: 24px;
+  border-radius: 12px;
 }
+.unique-form {
+  width: 100%;
+}
+.unique-form label {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+}
+.formsss {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formsss .Airtime-to-cash {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: #6882b6;
+}
+
+.network-phoneN {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.unique-slide-in input {
+  /* width: 220px; */
+  height: 50px;
+  border: 1px solid #c7dbef;
+  padding: 16px;
+  margin-top: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.94px;
+  color: #6882b6;
+}
+.unique-slide-in {
+  margin-top: 32px;
+}
+.info-inputs {
+  margin-bottom: 12px;
+}
+.amount-input {
+  display: flex;
+  flex-direction: column;
+}
+.Select-option {
+  width: 220px;
+  height: 50px;
+}
+.Proceed-btn {
+  width: 100%;
+  margin-top: 54px;
+}
+
 p {
   margin: 0;
   padding: 0;

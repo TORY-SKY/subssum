@@ -1,5 +1,3 @@
-import { Switch } from "antd";
-import { Link } from "react-router-dom";
 import "antd/dist/reset.css";
 import loogo from "./assets/images/loggo.svg";
 import { SidebarData } from "./SidebarData";
