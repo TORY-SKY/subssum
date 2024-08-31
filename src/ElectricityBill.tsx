@@ -8,7 +8,7 @@ const ElectricityBill = () => {
       <div className="BuyAirtime-container">
         <div className="buyAirtime-leftside">
           <SideBar />
-          import LogoutBtn from "./LogoutBtn";
+          <LogoutBtn />
         </div>
         <div className="buyAirtime-leftside">
           <UserNavbar />
