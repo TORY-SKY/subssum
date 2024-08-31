@@ -9,7 +9,6 @@ import { ImageProvider } from "./ContextAPI/Context";
 import AirtimeTocash from "./AirtimeTocash";
 import BuyAirtime from "./BuyAirtime";
 import BuyData from "./BuyData";
-import Tvsub from "./Tvsub";
 import ElectricityBill from "./ElectricityBill";
 
 const router = createBrowserRouter([
@@ -60,11 +59,7 @@ const router = createBrowserRouter([
     element: <BuyData />,
     errorElement: "Error Accessing this page",
   },
-  {
-    path: "/tvsub",
-    element: <Tvsub />,
-    errorElement: "Error Accessing this page",
-  },
+
   {
     path: "/payelectricalbill",
     element: <ElectricityBill />,
