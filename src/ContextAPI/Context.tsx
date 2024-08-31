@@ -18,7 +18,7 @@ export const ImageProvider = ({ children }: { children: ReactNode }) => {
   const [images, setImages] = useState<ImageData[]>([]);
 
   const addImage = (image: ImageData) => {
-    setImages((prevImages) => [...prevImages, image]);
+    setImages([image]);
   };
 
   return (

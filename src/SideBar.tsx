@@ -31,7 +31,7 @@ const SideBar = () => {
               <div className="icon">{data.icon}</div>
               <div className="title">
                 {data.title}{" "}
-                <span className="arrow">
+                <span className="arrow" >
                   <ExpandMoreOutlinedIcon />
                 </span>
               </div>

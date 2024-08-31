@@ -121,21 +121,23 @@ ul {
   flex: 10%;
 }
 .login-page-container {
-  width: 1280px;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  height: 100vh; /* Take the full height of the viewport */
+  /* width: 1280px; */
+  /* display: grid; */
+  /* grid-template-columns: 30% 70%; */
+  /* height: 100vh; Take the full height of the viewport */
   /*Set a fixed width for the entire container */
-  overflow: hidden;
+
+  display: grid;
+  /* grid-template-columns: 22% 78%; */
+  grid-template-columns: minmax(300px, 30%) minmax(900px, 70%);
 }
 .right-side {
   padding: 24px;
-  height: 100dvh;
+  height: 100%;
+  background-color: red;
 }
 /* navigation-bar */
 
-.Navbar-container {
-}
 .navigation-bar {
   display: flex;
   align-items: center;
@@ -268,9 +270,11 @@ button {
 .profile-page-container,
 .Airtime-to-cash-container,
 .BuyAirtime-container {
+  /* height: 100vh; */
   display: grid;
-  grid-template-columns: 22% 78%;
-  width: 1200px;
+  /* grid-template-columns: 22% 78%; */
+  grid-template-columns: minmax(300px, 22%) minmax(900px, 78%);
+  /* width: 1200px; */
 }
 
 .buyAirtime-leftside {

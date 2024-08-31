@@ -20,12 +20,12 @@ const UserNavbar = () => {
         <div className="merchant-upgrade">
           <h3 className="welcome">Upgrade To Merchant</h3>
           <div className="merchant-icons">
-            <Link to="/notification">
+            <Link to="/notification" title="notification">
               <div className="notification-icon merchant-ic">
                 <NotificationsOutlinedIcon />
               </div>
             </Link>
-            <Link to="/profile">
+            <Link to="/profile" title="profile">
               <div className="User-icon merchant-ic">
                 <Person2OutlinedIcon />
               </div>

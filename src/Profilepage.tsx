@@ -51,6 +51,12 @@ const Profilepage = () => {
   const handleFormChange = (formType: "password" | "pin") => {
     setActiveForm(formType);
   };
+
+  // Helper function to generate a unique key
+  const generateUniqueKey = () => {
+    return `image-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
+  };
+
   return (
     <div className="profile-page-container">
       <div className="profile-leftside">
@@ -64,10 +70,32 @@ const Profilepage = () => {
             <div className="the-left-side">
               <div className="activity profile-image">
                 <div>
-                  <img src={Avatar} alt="" />
-                  {images.map((image) => (
-                    <img src={image.url == "" ? Avatar : image.url} alt="" />
-                  ))}
+                  {images.length === 0 ? (
+                    // Show default avatar if no image is uploaded
+                    <img
+                      style={{
+                        width: "100px",
+                        height: "100px",
+                        borderRadius: "50%",
+                      }}
+                      src={Avatar}
+                      alt="Default Avatar"
+                    />
+                  ) : (
+                    // Show uploaded image with a unique key
+                    images.map((image) => (
+                      <img
+                        key={generateUniqueKey()} // Use the unique key generator
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          borderRadius: "50%",
+                        }}
+                        src={image.url}
+                        alt="Uploaded"
+                      />
+                    ))
+                  )}
                 </div>
                 <input
                   className="uploadImg"
@@ -75,6 +103,12 @@ const Profilepage = () => {
                   accept="image/*"
                   onChange={handleUpload} // Accessibility improvement
                   placeholder="upload your img"
+                  style={{
+                    border: "none",
+                    outline: "transparent",
+                    width: "120px",
+                    backgroundColor: "transparent",
+                  }}
                 />
                 <div
                   className="upload-container"
