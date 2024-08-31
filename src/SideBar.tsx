@@ -2,8 +2,10 @@ import "antd/dist/reset.css";
 import loogo from "./assets/images/loggo.svg";
 import { SidebarData } from "./SidebarData";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="side-bar-comp"
@@ -19,7 +21,7 @@ const SideBar = () => {
               className="row"
               id={window.location.pathname == data.link ? "active" : ""}
               key={key}
-              onClick={() => (window.location.pathname = data.link)}
+              onClick={() => navigate(data.link)}
             >
               <div className="icon">{data.icon}</div>
               <div className="title">
