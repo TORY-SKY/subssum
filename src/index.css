@@ -24,6 +24,10 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* left side of the website */
 .left-side {
   background-color: var(--darkGrey-color);
@@ -46,8 +50,9 @@ body {
 /* logo */
 .sidebar-logo {
   margin-bottom: 29px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
 }
+
 .descrip {
   position: absolute;
   z-index: 100;
@@ -116,6 +121,7 @@ ul {
   flex: 10%;
 }
 .login-page-container {
+  width: 1280px;
   display: grid;
   grid-template-columns: 30% 70%;
   height: 100vh; /* Take the full height of the viewport */

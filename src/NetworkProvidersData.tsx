@@ -42,8 +42,8 @@ const options: PlatformOption[] = [
   },
   {
     icon: NineMobile,
-    label: "NineMobile",
-    value: "NineMobile",
+    label: "9Mobile",
+    value: "9Mobile",
   },
 ];
 interface CustomDropdownProps {
@@ -100,11 +100,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = () => {
         }}
       >
         {options.map((option) => (
-          <MenuItem
-            style={{ border: "none" }}
-            key={option.value}
-            value={option.value}
-          >
+          <MenuItem key={option.value} value={option.value}>
             <Box display="flex" alignItems="center">
               <img
                 src={option.icon}
