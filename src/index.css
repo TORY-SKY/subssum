@@ -23,6 +23,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* left side of the website */
 .left-side {
   background-color: var(--darkGrey-color);
@@ -263,7 +264,9 @@ button {
 .BuyAirtime-container {
   display: grid;
   grid-template-columns: 22% 78%;
+  width: 1200px;
 }
+
 .buyAirtime-leftside {
   background-color: #eff3fb;
 }
@@ -396,7 +399,7 @@ button {
   opacity: 0px;
 }
 .userCards {
-  padding: 24px;
+  padding-left: 44px;
 }
 .user-cards {
   position: relative;
@@ -621,8 +624,10 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+.phone-number {
+  width: 220px;
+}
 .unique-slide-in input {
-  /* width: 220px; */
   height: 50px;
   border: 1px solid #c7dbef;
   padding: 16px;

@@ -93,7 +93,7 @@ const ChangePasswordForm: React.FC = () => {
         </div>
         <div className="info-inputs">
           <label htmlFor="Phone Number">Phone Number</label>
-          <input type="text" placeholder="08094562627" />
+          <input type="text" className="phone-number" placeholder="08094562627" />
         </div>
 
         {/* You can also add other form fields here */}

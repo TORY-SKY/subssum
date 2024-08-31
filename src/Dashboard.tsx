@@ -1,54 +1,16 @@
 import SideBar from "./SideBar";
-import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import UserNavbar from "./UserNavbar";
+import LogoutBtn from "./LogoutBtn";
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="leftSide">
         <SideBar />
-        <div
-          className="logout-btn"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginLeft: "22px",
-            marginBottom: "22px",
-            width: "197px",
-          }}
-        >
-          <button
-            className="log-out"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "100%",
-              fontSize: "16px",
-            }}
-          >
-            <div
-              className="button-text-icon"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <LogoutOutlinedIcon
-                className="icon"
-                style={{ marginRight: "8px" }}
-              />
-              <span>Log Out</span>
-            </div>
-            <ExpandMoreOutlinedIcon className="arrow" />
-          </button>
-        </div>
+        <LogoutBtn />
       </div>
       <div className="dashboard-rightSide">
         <UserNavbar />
@@ -107,7 +69,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="userCards">
+          <div className="userCards" >
             <div className="user-cards">
               <h3 className="card-dis">Cards</h3>
               <div className="card-container">
