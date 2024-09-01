@@ -5,7 +5,7 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import UserNavbar from "./UserNavbar";
 import LogoutBtn from "./LogoutBtn";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 const Dashboard = () => {
   // Copy function
 
@@ -25,6 +25,31 @@ const Dashboard = () => {
       );
     }
   };
+  // Share referral code function
+  const [referralCode] = useState<string>("18/52ha089");
+  const ShareReferralCode = () => {
+    // Check if the browser supports the Web Share API
+    if (navigator.share) {
+      navigator
+        .share({
+          title:
+            "Check out this amazing site where you can covert your airtime to data, pretty much",
+          text: `Join me on this platform and get rewards using my referral code @ ${referralCode}`,
+          url: referralCode,
+        })
+        .then(() => {
+          console.log("Successfully shared!");
+        })
+        .catch((error) => {
+          console.error("Error sharing:", error);
+        });
+    } else {
+      alert(
+        "Sharing is not supported in your browser. Please copy the link manually."
+      );
+    }
+  };
+
   return (
     <div className="dashboard-container">
       <div className="leftSide">
@@ -48,7 +73,7 @@ const Dashboard = () => {
                 <div className="referral-code-container">
                   Referral Code:{" "}
                   <span className="referral-code" ref={textRef} style={{}}>
-                    18/52ha089
+                    {referralCode}
                   </span>
                 </div>
                 <div className="operations">
@@ -65,7 +90,11 @@ const Dashboard = () => {
                     <DriveFileRenameOutlineOutlinedIcon />
                     <span>Edit</span>
                   </div>
-                  <div className="copy">
+                  <div
+                    className="copy"
+                    onClick={ShareReferralCode}
+                    style={{ cursor: "pointer" }}
+                  >
                     <ReplyOutlinedIcon />
                     <span>Share</span>
                   </div>
