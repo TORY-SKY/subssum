@@ -1,6 +1,6 @@
 import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useRef, useState } from "react";
 import { useImageContext } from "./ContextAPI/Context";
 import Avatar from "./assets/images/imgplaceholder.svg";
 import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
@@ -56,7 +56,24 @@ const Profilepage = () => {
   const generateUniqueKey = () => {
     return `image-${Math.random().toString(36).substr(2, 9)}-${Date.now()}`;
   };
+  // Copy function to referral link
 
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const copyText = () => {
+    if (textRef.current) {
+      // Access the text content of the ref element
+      const textToCopy = textRef.current.innerText;
+      // Use the Clipboard API to copy text
+      navigator.clipboard.writeText(textToCopy).then(
+        () => {
+          alert("Text copied successfully!");
+        },
+        (err) => {
+          console.error("Failed to copy text: ", err);
+        }
+      );
+    }
+  };
   return (
     <div className="profile-page-container">
       <div className="profile-leftside">
@@ -151,9 +168,11 @@ const Profilepage = () => {
                   <div className="detail-disc">
                     <p>Referral Link</p>
                   </div>
-                  <div className="detail-values">www.subsum.com/tre/wd...</div>
+                  <div className="detail-values" ref={textRef}>
+                    www.subsum.com/tre/wd...
+                  </div>
                 </div>
-                <div className="copy">
+                <div className="copy" onClick={copyText}>
                   <ContentCopyOutlinedIcon />
                   <span>Copy</span>
                 </div>
