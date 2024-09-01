@@ -5,7 +5,26 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import UserNavbar from "./UserNavbar";
 import LogoutBtn from "./LogoutBtn";
+import { useRef } from "react";
 const Dashboard = () => {
+  // Copy function
+
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const copyText = () => {
+    if (textRef.current) {
+      // Access the text content of the ref element
+      const textToCopy = textRef.current.innerText;
+      // Use the Clipboard API to copy text
+      navigator.clipboard.writeText(textToCopy).then(
+        () => {
+          alert("Text copied successfully!");
+        },
+        (err) => {
+          console.error("Failed to copy text: ", err);
+        }
+      );
+    }
+  };
   return (
     <div className="dashboard-container">
       <div className="leftSide">
@@ -28,13 +47,17 @@ const Dashboard = () => {
                 <div className="Referra-l">Referral</div>
                 <div className="referral-code-container">
                   Referral Code:{" "}
-                  <span className="referral-code" style={{}}>
+                  <span className="referral-code" ref={textRef} style={{}}>
                     18/52ha089
                   </span>
                 </div>
                 <div className="operations">
                   {/* copy, edit and share operation */}
-                  <div className="copy">
+                  <div
+                    className="copy"
+                    onClick={copyText}
+                    style={{ cursor: "pointer" }}
+                  >
                     <ContentCopyOutlinedIcon />
                     <span>Copy</span>
                   </div>
@@ -69,7 +92,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="userCards" >
+          <div className="userCards">
             <div className="user-cards">
               <h3 className="card-dis">Cards</h3>
               <div className="card-container">
