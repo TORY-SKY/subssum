@@ -214,12 +214,25 @@ const LoginPage: React.FC = () => {
                     )}
                   </div>
                 </div>
-                <div className={`error-div-hide`}>
+                <div
+                  className={`error-div-hide`}
+                  style={{ marginBottom: "8px" }}
+                >
                   {errors.email && (
-                    <span className="error-message">{errors.email}, </span>
+                    <span
+                      className="error-message"
+                      style={{ color: "red", fontSize: "10px" }}
+                    >
+                      {errors.email},{" "}
+                    </span>
                   )}
                   {errors.password && (
-                    <span className="error-message">{errors.password}</span>
+                    <span
+                      className="error-message"
+                      style={{ color: "red", fontSize: "10px" }}
+                    >
+                      {errors.password}
+                    </span>
                   )}
                 </div>
                 <div className="remember-me-recoverpas">

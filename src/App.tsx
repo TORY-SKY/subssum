@@ -10,6 +10,7 @@ import AirtimeTocash from "./AirtimeTocash";
 import BuyAirtime from "./BuyAirtime";
 import BuyData from "./BuyData";
 import ElectricityBill from "./ElectricityBill";
+import Test from "./Test";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
   {
     path: "/payelectricalbill",
     element: <ElectricityBill />,
+    errorElement: "Error Accessing this page",
+  },
+  {
+    path: "/test",
+    element: <Test />,
     errorElement: "Error Accessing this page",
   },
 ]);
