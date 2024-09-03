@@ -1,7 +1,6 @@
 import LoginPage from "./LoginPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SideBar from "./SideBar";
-import Transactionhistory from "./Transactionhistory";
 import Dashboard from "./Dashboard";
 import Profilepage from "./Profilepage";
 import { ImageProvider } from "./ContextAPI/Context";
@@ -36,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/transactionhistory",
-    element: <Transactionhistory />,
+    element: <Test />,
     errorElement: "Error Accessing this page",
   },
   {

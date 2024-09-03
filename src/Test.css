@@ -1,28 +1,56 @@
 /* TransactionHistory.css */
 .table-container {
-  max-height: 400px;
+  max-height: 100vh;
   overflow-y: auto;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   margin-top: 10px;
 }
 
-table {
+.table-container table {
   width: 100%;
   border-collapse: collapse;
+  font-family: "Inter", sans-serif;
 }
 
-th,
-td {
+.table-container th,
+.table-container td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  font-family: "Inter", sans-serif;
+  color: #6882b6;
+  font-size: 12px;
 }
-
-.filter-container {
+.table-container td p {
+  font-size: 12px;
+}
+.table-container th {
+  font-weight: 500;
+  line-height: 28px;
+  font-size: 12px;
+}
+.table-container .transaction-service {
+  font-weight: 600;
+  line-height: 28px;
+}
+.table-container .transaction-phoneNo {
+  font-weight: 400 !important;
+}
+.table-container .filter-container {
   margin-bottom: 10px;
 }
 
-select {
+.table-container select {
   padding: 5px;
   margin-right: 10px;
+}
+.ptag {
+  background-color: rgba(235, 109, 98, 0.221);
+}
+.status-svg-container {
+  padding: 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

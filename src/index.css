@@ -269,7 +269,8 @@ button {
 .dashboard-container,
 .profile-page-container,
 .Airtime-to-cash-container,
-.BuyAirtime-container {
+.BuyAirtime-container,
+.transaction-history {
   /* height: 100vh; */
   display: grid;
   /* grid-template-columns: 22% 78%; */
@@ -672,6 +673,50 @@ p {
   padding: 0;
 }
 
+/* transaction history */
+.transaction-left-side {
+  background-color: var(--darkGrey-color);
+}
+.transaction-right-side {
+  margin: 32px;
+}
+.Transa-page {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #2b3b5a;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f7f9fd;
+  width: 190px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #d7e1f4;
+  padding: 8px;
+}
+.filter-container select {
+  background-color: transparent;
+  border: none;
+  outline: #4c689e;
+}
+/* open button */
+.transaction-open-btn button {
+  padding: 8px;
+  border: none;
+  background-color: #eff3fb;
+  border-radius: 6px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.32px;
+  letter-spacing: 0.02em;
+}
 * {
   /* outline: 1px solid red; */
 }
