@@ -733,3 +733,67 @@ p {
   border-radius: 10px;
   opacity: 0px;
 }
+
+/* help and support styling */
+.helbox {
+  display: flex;
+  align-items: center;
+  width: 331px;
+  height: 90px;
+  top: 98px;
+  left: 336px;
+  padding: 12px;
+  gap: 14px;
+  border-radius: 24px;
+  border: 1px solid #d7e1f4;
+  opacity: 0px;
+  cursor: pointer;
+}
+.helbox .the-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  padding: 21px;
+  gap: 0px;
+  border-radius: 18px;
+  opacity: 0px;
+}
+
+.help-content {
+  display: grid;
+  width: 755px;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr;
+}
+.help-content .helbox {
+  margin-bottom: 24px;
+  margin-right: 24px;
+}
+.the-text-clickables {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.32px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin-top: 9px;
+  color: #4169e1;
+}
+.the-text-clickables span {
+  margin-right: 10px;
+}
+.the-texts-p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #6882b6;
+}
