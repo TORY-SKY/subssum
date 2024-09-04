@@ -23,7 +23,7 @@ const Errorpage = () => {
         src={ErrorIllus}
         alt="Error illustration"
         style={{
-          width: "30%",
+          width: "50%",
           aspectRatio: "1",
           padding: "0",
           margin: "0 !important",
