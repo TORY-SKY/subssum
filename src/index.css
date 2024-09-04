@@ -270,7 +270,8 @@ button {
 .profile-page-container,
 .Airtime-to-cash-container,
 .BuyAirtime-container,
-.transaction-history {
+.transaction-history,
+.help-n-support-container {
   /* height: 100vh; */
   display: grid;
   /* grid-template-columns: 22% 78%; */
@@ -557,8 +558,6 @@ button {
   color: var(--secondary-color);
 }
 
-.profile-rightside {
-}
 .changer-password-container {
   width: 432px;
   padding-left: 32px;
@@ -717,6 +716,20 @@ p {
   line-height: 20.32px;
   letter-spacing: 0.02em;
 }
-* {
-  /* outline: 1px solid red; */
+/* Error page styling */
+
+.goBack-btn {
+  cursor: pointer;
+  width: 194px;
+  height: auto;
+  border: none;
+  outline: none;
+  background-color: #4169e1;
+  font-family: "Inter", sans-serif;
+  color: var(--white-color);
+  padding: 17px;
+  margin: 12px;
+  gap: 10px;
+  border-radius: 10px;
+  opacity: 0px;
 }

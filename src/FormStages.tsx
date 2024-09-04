@@ -21,7 +21,7 @@ export const AirtimeInfoForm: React.FC<AirtimeInfoFormProps> = ({
     amount: "",
     pin: "",
   });
-
+  // custom dropdown change function
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {

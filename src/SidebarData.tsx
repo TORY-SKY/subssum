@@ -52,6 +52,6 @@ export const SidebarData: SidebarMenuItem[] = [
   {
     title: "Help & Support",
     icon: <SupportAgentOutlinedIcon />,
-    link: "/helpcenter",
+    link: "/helpandsupport",
   },
 ];

@@ -15,7 +15,7 @@ const UserNavbar = () => {
         }}
       >
         <div className="username-display">
-          <h3 className="welcome">Welcome, Lawal Wahab</h3>
+          <h3 className="welcome">{"Welcome, Lawal Wahab"}</h3>
         </div>
         <div className="merchant-upgrade">
           <h3 className="welcome">Upgrade To Merchant</h3>

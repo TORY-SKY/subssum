@@ -4,71 +4,77 @@ import SideBar from "./SideBar";
 import Dashboard from "./Dashboard";
 import Profilepage from "./Profilepage";
 import { ImageProvider } from "./ContextAPI/Context";
-// import FormSwitcher from "./Test";
 import AirtimeTocash from "./AirtimeTocash";
 import BuyAirtime from "./BuyAirtime";
 import BuyData from "./BuyData";
 import ElectricityBill from "./ElectricityBill";
 import Test from "./Test";
+import Transactionhistory from "./Transactionhistory";
+import Errorpage from "./Errorpage";
+import HelpandSupport from "./HelpandSupport";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginPage />,
-    errorElement: "Error Accessing this page, sir",
+    errorElement: <Errorpage />,
   },
   {
     path: "/dashboard",
     element: <Dashboard />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/recoverPassword",
     element: "recover password page",
-    errorElement:
-      "Error Accessing this page sir please go back to previous page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/sidebar",
     element: <SideBar />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/transactionhistory",
-    element: <Test />,
-    errorElement: "Error Accessing this page",
+    element: <Transactionhistory />,
+    errorElement: <Errorpage />,
   },
   {
     path: "/profile",
     element: <Profilepage />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
 
   {
     path: "/airtimetocash",
     element: <AirtimeTocash />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/buyairtime",
     element: <BuyAirtime />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/buydata",
     element: <BuyData />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
 
   {
     path: "/payelectricalbill",
     element: <ElectricityBill />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
   },
   {
     path: "/test",
     element: <Test />,
-    errorElement: "Error Accessing this page",
+    errorElement: <Errorpage />,
+  },
+  {
+    path: "/helpandsupport",
+    element: <HelpandSupport />,
+    errorElement: <Errorpage />,
   },
 ]);
 
