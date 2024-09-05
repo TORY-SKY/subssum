@@ -32,12 +32,13 @@ a {
 .left-side {
   background-color: var(--darkGrey-color);
   position: relative;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .pseudo-ele {
   border-top-left-radius: 24px;
 }
-.pseudo-ele::before {
+
+.left-side::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -45,6 +46,7 @@ a {
   top: 0;
   left: 0;
   background-image: linear-gradient(190deg, #7979ae36, #000080);
+  z-index: 1000;
   /* opacity: 0.8; */
 }
 /* logo */
@@ -55,12 +57,13 @@ a {
 
 .descrip {
   position: absolute;
-  z-index: 100;
+  z-index: 1000;
   color: var(--white-color);
   display: flex;
   font-size: 2rem;
   justify-content: center;
   bottom: 0;
+  margin-bottom: 30px;
   font-size: 32px;
   font-weight: 700;
   line-height: 38.4px;
@@ -131,10 +134,10 @@ ul {
   /* grid-template-columns: 22% 78%; */
   grid-template-columns: minmax(300px, 30%) minmax(900px, 70%);
 }
-.right-side {
+.login-page-container .right-side {
   padding: 24px;
   height: 100%;
-  background-color: red;
+  background-color: var(--darkGrey-color);
 }
 /* navigation-bar */
 
@@ -166,9 +169,6 @@ ul {
   margin-right: 12px;
 }
 
-.right-side {
-  background-color: var(--darkGrey-color);
-}
 /* login container styling */
 .login-container {
   display: flex;
@@ -735,6 +735,12 @@ p {
 }
 
 /* help and support styling */
+.help-n-support-container-leftside {
+  background-color: var(--darkGrey-color);
+  margin-right: 32px;
+  height: 100vh;
+}
+
 .helbox {
   display: flex;
   align-items: center;

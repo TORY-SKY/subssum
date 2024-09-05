@@ -1,3 +1,4 @@
+import LogoutBtn from "./LogoutBtn";
 import SideBar from "./SideBar";
 import UserNavbar from "./UserNavbar";
 const HelpandSupport = () => {
@@ -5,9 +6,15 @@ const HelpandSupport = () => {
     <div className="help-n-support-container">
       <div className="help-n-support-container-leftside">
         <SideBar />
+        <LogoutBtn />
       </div>
       <div className="help-n-support-container-rightside">
-        <div className="userHeader">
+        <div
+          className="userHeader"
+          style={{
+            marginTop: "32px",
+          }}
+        >
           <UserNavbar />
         </div>
         <div className="help-content">

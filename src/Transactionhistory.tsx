@@ -5,6 +5,7 @@ import UserNavbar from "./UserNavbar";
 import succesful from "../src/assets/images/successful.svg";
 import initiated from "../src/assets/images/initiated.svg";
 import failed from "../src/assets/images/failed.svg";
+import LogoutBtn from "./LogoutBtn";
 
 type Transaction = {
   service: string;
@@ -197,6 +198,7 @@ const Transactionhistory = () => {
     <div className="transaction-history">
       <div className="transaction-left-side">
         <SideBar />
+        <LogoutBtn />
       </div>
       <div className="transaction-right-side">
         <UserNavbar />
