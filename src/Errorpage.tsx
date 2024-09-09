@@ -39,7 +39,7 @@ const Errorpage = () => {
         }}
         className="goBack-btn"
       >
-        Go back
+        {"<"}Go back
       </button>
     </div>
   );
