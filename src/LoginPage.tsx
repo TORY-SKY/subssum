@@ -6,6 +6,14 @@ import { Switch } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import SideBar from "./SideBar";
+// GOOGLE SIGNIN IMPORT
+import {
+  signInWithPopup,
+  AuthError,
+  UserCredential,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { auth } from "./Authentication/FirebaseConfig";
 
 type FormData = {
   email: string;
@@ -19,6 +27,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState<boolean>(false);
   const [checked, setChecked] = useState(false);
+  // onchange function for the remember me switch
   const onChange = (checked: boolean) => {
     setChecked(checked);
     console.log(`Switch is now ${checked ? "On" : "Off"}`);
@@ -76,7 +85,46 @@ const LoginPage: React.FC = () => {
       console.log("Form submitted successfully", formData);
     }
   };
+  // GOOGLE SIGNIN FUNCTION
+  const handleGoogleSign = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      // signInWithPopup returns a promise that resolves to a UserCredential
+      const result: UserCredential = await signInWithPopup(auth, provider);
 
+      // Extract OAuthCredential from the result
+      const credential =
+        //: OAuthCredential | null
+        GoogleAuthProvider.credentialFromResult(result);
+
+      // Access token to interact with Google API
+      const token = credential?.accessToken;
+
+      // Retrieve the signed-in user's information
+      const user = result.user;
+
+      console.log("Signed in user:", user);
+      console.log("Access token:", token);
+      navigate("/dashboard");
+
+      // Optional: Use getAdditionalUserInfo(result) for more user details if needed
+    } catch (error) {
+      // Ensure the error is cast correctly to AuthError
+      const authError = error as AuthError;
+
+      // Extract error details
+      const errorCode = authError.code;
+      const errorMessage = authError.message;
+      const email = authError.customData?.email;
+      const credential = GoogleAuthProvider.credentialFromError(authError);
+
+      console.error("Error code:", errorCode);
+      console.error("Error message:", errorMessage);
+      if (email) console.error("User email:", email);
+      if (credential) console.error("Credential:", credential);
+    }
+  };
+  // GOOGLE SIGNIN FUNCTION
   return (
     <>
       <div className="login-page-container">
@@ -97,7 +145,17 @@ const LoginPage: React.FC = () => {
           <div className="login-container">
             <h1 className="login-text">Login</h1>
             <div className="login-with-google">
-              <Link to="/">
+              <button
+                onClick={handleGoogleSign}
+                className="login-with-google-btn"
+                style={{
+                  background: "transparent",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "none",
+                }}
+              >
                 <div className="google-container">
                   <svg
                     width="24"
@@ -133,7 +191,7 @@ const LoginPage: React.FC = () => {
                   </svg>
                   <span>Login with Google</span>
                 </div>
-              </Link>
+              </button>
             </div>
             {/* or continue with */}
             <div className="or-continue-with">

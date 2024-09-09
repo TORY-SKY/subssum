@@ -193,6 +193,9 @@ ul {
   box-shadow: 0 15px 19px #d7e1f4d3;
   border-radius: 12px;
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .login-with-google .google-container {
   display: flex;
