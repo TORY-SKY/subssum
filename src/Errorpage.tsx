@@ -30,7 +30,7 @@ const Errorpage = () => {
         }}
       />
       <h1 style={{ color: "grey", fontSize: "1.5rem", fontWeight: "600" }}>
-        404 ERROR PAGE
+        404 ERROR PAGE NOT FOUND
       </h1>
 
       <button
