@@ -125,6 +125,7 @@ const LoginPage: React.FC = () => {
     }
   };
   // GOOGLE SIGNIN FUNCTION
+  // GOOGLE SIGNIN FUNCTION
   return (
     <>
       <div className="login-page-container">
