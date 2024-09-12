@@ -6,14 +6,17 @@ import { Switch } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import SideBar from "./SideBar";
+
 // GOOGLE SIGNIN IMPORT
 import {
   signInWithPopup,
   AuthError,
   UserCredential,
   GoogleAuthProvider,
+  User as FirebaseUser,
 } from "firebase/auth";
 import { auth } from "./Authentication/FirebaseConfig";
+import { useUser, User } from "./assets/ContextAPI";
 
 type FormData = {
   email: string;
@@ -27,7 +30,9 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState<boolean>(false);
   const [checked, setChecked] = useState(false);
+  const { setUser } = useUser();
   // onchange function for the remember me switch
+
   const onChange = (checked: boolean) => {
     setChecked(checked);
     console.log(`Switch is now ${checked ? "On" : "Off"}`);
@@ -93,17 +98,34 @@ const LoginPage: React.FC = () => {
       const result: UserCredential = await signInWithPopup(auth, provider);
 
       // Extract OAuthCredential from the result
-      const credential =
-        //: OAuthCredential | null
-        GoogleAuthProvider.credentialFromResult(result);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
 
       // Access token to interact with Google API
       const token = credential?.accessToken;
 
       // Retrieve the signed-in user's information
-      const user = result.user;
+      const firebaseUser: FirebaseUser = result.user;
 
-      console.log("Signed in user:", user);
+      const mappedUser: User = {
+        accessToken: token || "",
+        displayName: firebaseUser.displayName || "",
+        email: firebaseUser.email || "",
+        emailVerified: firebaseUser.emailVerified,
+        isAnonymous: firebaseUser.isAnonymous,
+        metadata: {
+          createdAt: firebaseUser.metadata.creationTime || "",
+          lastLoginAt: firebaseUser.metadata.lastSignInTime || "",
+          lastSignInTime: firebaseUser.metadata.lastSignInTime || "",
+          creationTime: firebaseUser.metadata.creationTime || "",
+        },
+        phoneNumber: firebaseUser.phoneNumber,
+        photoURL: firebaseUser.photoURL || "",
+        providerId: firebaseUser.providerId,
+        uid: firebaseUser.uid,
+      };
+
+      setUser(mappedUser);
+      console.log("Signed in user:", firebaseUser);
       console.log("Access token:", token);
       navigate("/dashboard");
 

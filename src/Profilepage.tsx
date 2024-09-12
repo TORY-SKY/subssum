@@ -7,9 +7,13 @@ import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import "./FormSwitcher.css";
 import LogoutBtn from "./LogoutBtn";
+import { useUser } from "./assets/ContextAPI";
 
 const Profilepage = () => {
   const { addImage, images } = useImageContext();
+  // importing the collected data from google
+  const { theUser } = useUser();
+  // context api state
 
   // Handle the image upload
   const handleUpload = useCallback(
@@ -144,18 +148,28 @@ const Profilepage = () => {
               <div className=" profile-details">
                 <div className="detail">
                   <div className="detail-disc">Name</div>
-                  <div className="detail-values">Lawal Wahab Babatunde</div>
+                  <div className="detail-values">
+                    {theUser?.displayName
+                      ? theUser?.displayName
+                      : "Lawal Wahab Babatunde"}
+                  </div>
                 </div>
                 <div className="detail">
                   <div className="detail-disc">Email</div>
-                  <div className="detail-values">wabdotmail@gmail.com</div>
+                  <div className="detail-values">
+                    {theUser?.email ? theUser?.email : "wabdotmail@gmail.com"}
+                  </div>
                 </div>
                 <div className="detail">
                   <div className="detail-disc">
                     <p>Phone Number</p>
                   </div>
                   <div className="detail-values">
-                    <p>0906 856 2949</p>
+                    <p>
+                      {theUser?.phoneNumber
+                        ? theUser.phoneNumber
+                        : "0906 856 2949"}
+                    </p>
                   </div>
                 </div>
                 <div className="detail">

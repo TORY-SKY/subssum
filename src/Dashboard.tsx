@@ -6,6 +6,7 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import UserNavbar from "./UserNavbar";
 import LogoutBtn from "./LogoutBtn";
 import { useRef, useState } from "react";
+
 const Dashboard = () => {
   // Copy function
 
@@ -25,6 +26,7 @@ const Dashboard = () => {
       );
     }
   };
+
   // Share referral code function
   const [referralCode] = useState<string>("18/52ha089");
   const ShareReferralCode = () => {

@@ -12,6 +12,7 @@ import Test from "./Test";
 import Transactionhistory from "./Transactionhistory";
 import Errorpage from "./Errorpage";
 import HelpandSupport from "./HelpandSupport";
+import { UserProvider } from "./assets/ContextAPI";
 
 const router = createBrowserRouter([
   {
@@ -82,7 +83,9 @@ function App() {
   return (
     <>
       <ImageProvider>
-        <RouterProvider router={router} />
+        <UserProvider>
+          <RouterProvider router={router} />
+        </UserProvider>
       </ImageProvider>
     </>
   );

@@ -1,8 +1,10 @@
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import { Link } from "react-router-dom";
+import { useUser } from "./assets/ContextAPI";
 
 const UserNavbar = () => {
+  const { theUser } = useUser();
   return (
     <div>
       <div
@@ -15,7 +17,7 @@ const UserNavbar = () => {
         }}
       >
         <div className="username-display">
-          <h3 className="welcome">{"Welcome, Lawal Wahab"}</h3>
+          <h3 className="welcome">{"Welcome," + " " + theUser?.displayName}</h3>
         </div>
         <div className="merchant-upgrade">
           <h3 className="welcome">Upgrade To Merchant</h3>
