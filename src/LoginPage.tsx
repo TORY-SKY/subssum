@@ -120,13 +120,11 @@ const LoginPage: React.FC = () => {
         },
         phoneNumber: firebaseUser.phoneNumber,
         photoURL: firebaseUser.photoURL || "",
-        providerId: firebaseUser.providerId,
+        providerId: firebaseUser.providerData[0]?.providerId || "",
         uid: firebaseUser.uid,
       };
 
       setUser(mappedUser);
-      console.log("Signed in user:", firebaseUser);
-      console.log("Access token:", token);
       navigate("/dashboard");
 
       // Optional: Use getAdditionalUserInfo(result) for more user details if needed
