@@ -5,6 +5,8 @@ import { useUser } from "./assets/ContextAPI";
 
 const UserNavbar = () => {
   const { theUser } = useUser();
+  const userName = theUser?.displayName;
+  const displayName = userName ? userName : "";
   return (
     <div>
       <div
@@ -17,7 +19,7 @@ const UserNavbar = () => {
         }}
       >
         <div className="username-display">
-          <h3 className="welcome">{"Welcome," + " " + theUser?.displayName}</h3>
+          <h3 className="welcome">{"Welcome," + " " + displayName}</h3>
         </div>
         <div className="merchant-upgrade">
           <h3 className="welcome">Upgrade To Merchant</h3>
